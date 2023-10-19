@@ -2,12 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Block : MonoBehaviour
 {
     private DataItemAPI.EntryAPI info;
     [SerializeField]
-    private Rigidbody rigidbody;
+    private Rigidbody myRigidbody;
     
     private GameManager gameManager;
 
@@ -28,7 +29,7 @@ public class Block : MonoBehaviour
 
     public void EnablePhysics()
     {
-        rigidbody = gameObject.AddComponent<Rigidbody>();
+        myRigidbody = gameObject.AddComponent<Rigidbody>();
     }
 
     private string InfoPresentation()
